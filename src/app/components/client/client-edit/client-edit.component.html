@@ -1,0 +1,104 @@
+
+
+  <div class="row p-1 m-4">
+    <div class="col-md-4 col-sm-12">
+      <label>Client Name</label>
+      <input [(ngModel)]="TheClient.name" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Address</label>
+      <input [(ngModel)]="TheClient.address" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Mobile</label>
+      <input [(ngModel)]="TheClient.mobile" class="form-control">
+    </div>
+  </div>
+  <div class="row p-1 m-4">
+    <div class="col-md-4 col-sm-12">
+      <label>Tel 1</label>
+      <input [(ngModel)]="TheClient.telOne" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Tel 2</label>
+      <input [(ngModel)]="TheClient.telTwo" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>whatsapp</label>
+      <input [(ngModel)]="TheClient.whatsapp" class="form-control">
+    </div>
+  </div>
+  <div class="row p-1 m-4">
+    <div class="col-md-4 col-sm-12">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="TheClient.email" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Nationality</label>
+      <input [(ngModel)]="TheClient.nationality" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Residence</label>
+      <input [(ngModel)]="TheClient.residence" class="form-control">
+    </div>
+  </div>
+  <div class="row p-1 m-4">
+    <div class="col-md-4 col-sm-12">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="TheClient.email" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Nationality</label>
+      <input [(ngModel)]="TheClient.nationality" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Residence</label>
+      <input [(ngModel)]="TheClient.residence" class="form-control">
+    </div>
+  </div>
+  <div class="row p-1 m-4">
+    <div class="col-md-4 col-sm-12">
+      <label>Description</label>
+      <input [(ngModel)]="TheClient.description" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Occupation</label>
+      <input [(ngModel)]="TheClient.occupation" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Enter By</label>
+      <input [(ngModel)]="TheClient.enterBy" class="form-control">
+    </div>
+  </div>
+  <div class="row p-1 m-4">
+    <div class="col-md-4 col-sm-12">
+      <label>Entry Date</label>
+      <input type="date" [(ngModel)]="TheClient.enterDate" dateFormat="mm-dd-yy" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Last Edit</label>
+      <input [(ngModel)]="TheClient.lastEdit" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>last Edit Date</label>
+      <input type="date" [(ngModel)]="TheClient.lastEditIn" dateFormat="mm-dd-yy" class="form-control">
+    </div>
+  </div>
+  <div class="row p-1 m-4">
+    <!-- <div class="col-md-4 col-sm-12">
+      <label>Sales Man</label>
+      <input [(ngModel)]="TheClient.employees" class="form-control">
+    </div> -->
+    <div class="col-md-4 col-sm-12">
+      <label>client Source</label>
+      <input [(ngModel)]="TheClient.clientSource" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Customer Rate</label>
+      <input [(ngModel)]="TheClient.customerRate" class="form-control">
+    </div>
+  </div>
+  <button class="btn btn-primary m-3 p-2" (click)="save()" >Save <i class="far fa-save"></i></button>
+  <button class="btn btn-light m-3 p-2" (click)="cancel()" >cancel</button>
+
+

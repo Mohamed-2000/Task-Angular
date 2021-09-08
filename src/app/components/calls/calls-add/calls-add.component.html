@@ -1,0 +1,36 @@
+
+
+  <div class="row p-1 m-4">
+    <div class="col-md-4 col-sm-12">
+      <label>Description</label>
+      <input [(ngModel)]="TheCall.description" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Call Title</label>
+      <input [(ngModel)]="TheCall.callTitle" class="form-control">
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <label>Date</label>
+      <input type="date" [(ngModel)]="TheCall.date" class="form-control">
+    </div>
+  </div>
+  <div class="row p-1 m-4">
+    <div class="col-md-4 col-sm-12">
+      <label>Project</label>
+      <input [(ngModel)]="TheCall.theProject" class="form-control">
+    </div>
+    <!-- <div class="col-md-4 col-sm-12">
+      <label>Employee</label>
+      <input [(ngModel)]="TheCall.employees" class="form-control">
+    </div> -->
+    <div class="col-md-4 col-sm-12">
+      <label>Call Type</label>
+      <input [(ngModel)]="TheCall.callType" class="form-control">
+    </div>
+  </div>
+
+
+  <button class="btn btn-primary m-3 p-2" (click)="save()" >Save <i class="far fa-save"></i></button>
+  <button class="btn btn-light m-3 p-2" (click)="cancel()" >cancel</button>
+
+

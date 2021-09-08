@@ -1,0 +1,94 @@
+
+<div class="input-group rounded col-md-6">
+  <a style="color: white;font-weight: bold;" class="btn btn-info m-2" routerLink="/client/add"> <i class="fas fa-plus"></i> add New</a>
+  <a style="color: white;font-weight: bold;" class="btn btn-info m-2" (click)='refresh()'> <i class="fas fa-sync-alt"></i></a>
+  <a style="color: white;font-weight: bold;" class="btn btn-info m-2" (click)='export()'> <i class="fas fa-file-excel"></i></a>
+  <button printSectionId="tablerecords"
+    ngxPrint
+    [useExistingCss]="true"
+    class="btn btn-info m-2"
+    >
+    <i class="fas fa-print"></i></button>
+  <a  class="btn btn-light m-2" (click)='show()'> <i class="fas fa-search"></i></a>
+  <input id="search" style="display: none;" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+   [(ngModel)]="searchValue"/>
+
+
+  <table id="tablerecords" class="table table-bordered table-hover">
+    <thead style="background-color: #0dcaf0;text-align: center;">
+      <tr>
+        <th>Client Name</th>
+        <th>Address</th>
+        <th>Mobile</th>
+        <th>Tel One</th>
+        <th>Tel Two</th>
+        <th>whatsapp</th>
+        <th>Email</th>
+        <th>Nationality</th>
+        <th>Residence</th>
+        <th>Description</th>
+        <th>occupation</th>
+        <th>Entered By</th>
+        <th>Enter Date</th>
+        <th>last Edit</th>
+        <th>last Edit Date</th>
+        <th>Sales Man</th>
+        <th>client Source</th>
+        <th>customer Rate</th>
+        <th>Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of clients |searchfilter:searchValue | paginate: { id: 'listing_pagination',
+        itemsPerPage: 5,
+        currentPage: Page,
+        totalItems: totalRecord }">
+        <td>{{item.name}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.mobile}}</td>
+        <td>{{item.telOne}}</td>
+        <td>{{item.telTwo}}</td>
+        <td>{{item.whatsapp}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.nationality}}</td>
+        <td>{{item.residence}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.occupation}}</td>
+        <td>{{item.enterBy}}</td>
+        <td>{{item.enterDate | date}}</td>
+        <td>{{item.lastEdit}}</td>
+        <td>{{item.lastEditIn | date}}</td>
+        <td *ngFor="let t of item.employees">
+            {{t.name}}
+        </td>
+        <td>{{item.clientSource}}</td>
+        <td>{{item.customerRate}}</td>
+        <td>
+            <a class="btn btn-info m-2" routerLink="/client/edit/{{item.id}}"><i class="far fa-edit"></i></a>
+            <a class="btn btn-info m-2" routerLink="/client/list" (click)="Delete(item.id)"><i class="fas fa-trash-alt"></i></a>
+
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <router-outlet></router-outlet>
+</div>
+<div>
+
+  <!-- <pagination-controls  id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="Page = $event"></pagination-controls> -->
+  <pagination-controls  id="listing_pagination"
+                      (pageChange)="Page = $event"
+                      (pageBoundsCorrection)="Page = $event"
+                      maxSize="9"
+                      directionLinks="true"
+
+                      previousLabel="Previous"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+</pagination-controls>
+</div>
+
